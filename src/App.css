@@ -1,0 +1,59 @@
+.inputsField {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    /* shadow-sm */
+    border-radius: 4px;
+    /* rounded-md */
+    padding: 3px;
+    /* px-3 py-2 */
+    border: 2px solid black;
+    /* border-solid border-2 border-black */
+    outline: none;
+    color: black;
+
+    &:focus {
+        border: 1px solid indigo;
+        /* focus:ring-1 focus:ring-indigo-500 */
+    }
+
+    width: 100%;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  
+  .logop {
+    text-align: center;
+    display: flex;
+    position: relative;
+    left: 15px;
+  }
+  
+  .logobg {
+    background-color: #63b91c;
+    color: #F2F2F2;
+    padding: 3px 9px;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-left: 5px;
+  }
+
+  .btn{
+    background-color: #63b91c !important;
+  }
+
+  .updtbtn {
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    font-weight: 700;
+    width: 6vw;
+    background-color: #63b91c !important;
+  }
+  
+  .updtbtn:hover {
+    background-color: #63b91c90 !important;
+  }
