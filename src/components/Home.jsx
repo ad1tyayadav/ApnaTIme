@@ -25,7 +25,7 @@ export default function Home() {
                 </div>
 
                 <div className="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
-                    <img className="w-96 relative z-[-2]" src="public\apoint.svg" alt="image1" />
+                    <img type="image/svg+xml" className="w-96 relative z-[-2]" src="/apoint.svg" alt="image1" />
                 </div>
             </aside>
 
