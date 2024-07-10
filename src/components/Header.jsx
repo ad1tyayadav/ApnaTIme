@@ -3,10 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
     return (
-        <header className="shadow sticky z-50 top-0">
+        <header className="shadow relative z-[1] sticky z-50 top-0">
             <nav className="bg-gray-900 text-white border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <Link to="/" className="flex items-center">
+                    <Link to="/" className="flex items-center ">
                         <div className='logop'>
                             <b className='text-2xl'>Apna</b>
                             <span className='logobg text-xl'>Time</span>
@@ -63,12 +63,12 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/github"
+                                    to="https://internetcomputer.org/"
                                     className={({ isActive }) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-green-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-green-700 lg:p-0`
                                     }
                                 >
-                                    Github
+                                    ICP
                                 </NavLink>
                             </li>
 

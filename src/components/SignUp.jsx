@@ -1,58 +1,59 @@
-import { useForm } from 'react-hook-form'
-import { Button, Input } from './index'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import { Button, Input } from './index';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup() {
-    const navigate = useNavigate()
-    const [error, setError] = useState()
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit } = useForm();
 
-    const create = async (data) => {
-        setError("")
-        try {
-            navigate("/")
-        } catch (error) {
-            setError(error)
+    const submit = (data) => {
+        const { name, email, password } = data;
+        if (name && email && password) {
+            // Here you can implement actual signup logic
+            toast.success("Welcome! This is the initial phase of the project");
+        } else {
+            console.error("Please fill in all required fields.");
         }
-    }
+    };
 
     return (
-        <div className='flex mt-4 mb-2 items-center justify-center w-full'>
+        <div className='flex mt-20 mb-16 items-center justify-center w-full'>
             <div className={`mx-auto w-full max-w-lg bg-gray-900 text-white rounded-xl p-10 border border-black/10`}>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
+                <h2 className="text-center text-2xl font-bold leading-tight">Sign up for an account</h2>
                 <br />
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-                <form onSubmit={handleSubmit(create)}>
+                <form onSubmit={handleSubmit(submit)}>
                     <div className="space-y-5">
                         <Input
                             label='Name'
+                            id='name'
                             placeholder='Enter your full name'
                             type='text'
-                            {...register('name', {
-                                required: true
-                            })}
+                            required
+                            {...register('name', { required: true })}
                         />
                         <Input
                             label='Email'
+                            id='email'
                             placeholder='Enter your email'
                             type='email'
+                            required
                             {...register("email", {
                                 required: true,
-                                validate: {
-                                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                                        "Email address must be a valid address",
+                                pattern: {
+                                    value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                                    message: "Email address must be a valid address"
                                 }
                             })}
                         />
                         <Input
                             label='Password'
+                            id='password'
                             placeholder='Enter Password'
                             type='password'
-                            {...register('password', {
-                                required: true
-                            })}
+                            required
+                            {...register('password', { required: true })}
                         />
                         <Button
                             type='submit'
@@ -60,6 +61,7 @@ function Signup() {
                         >
                             Sign Up
                         </Button>
+                        <ToastContainer />
                         <p className="mt-2 text-center text-base text-white/60">
                             Already have an account?&nbsp;
                             <Link
@@ -73,7 +75,7 @@ function Signup() {
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default Signup
+export default Signup;

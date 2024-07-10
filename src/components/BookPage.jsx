@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Example() {
   const navigate = useNavigate();
+
 
   const bookAppoint = (e) => {
     e.preventDefault();
@@ -11,9 +14,9 @@ export default function Example() {
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
     if (name && email && service && date && time) {
-      navigate("/");
+      toast.info("This is the initial phase of the project!");
     } else {
-      console.error("Please fill in all required fields.");
+      toast.error("Please fill in all required fields.");
     }
   };
 
@@ -50,6 +53,7 @@ export default function Example() {
         </div>
         <button type="submit" className="inline-flex justify-center items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full">
           Book Appointment
+          <ToastContainer />
         </button>
       </form>
     </div>
