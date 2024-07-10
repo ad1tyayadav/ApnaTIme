@@ -25,11 +25,11 @@ export default function Home() {
                 </div>
 
                 <div className="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
-                    <img type="image/svg+xml" className="w-96 relative z-[-2]" src="/apoint.svg" alt="image1" />
+                    <img className="w-96 relative z-[-2]" src="/apoint.png" alt="image1" />
                 </div>
             </aside>
 
-            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium">This is only a demo</h1>
+            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium">Hello awesome ICP Team!</h1>
         </div>
     );
 }
