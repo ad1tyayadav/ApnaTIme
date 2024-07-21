@@ -28,8 +28,6 @@ export default function Home() {
                     <img className="w-96 relative z-[-2]" src="/apoint.png" alt="image1" />
                 </div>
             </aside>
-
-            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium">Hello awesome ICP Team!</h1>
         </div>
     );
 }
